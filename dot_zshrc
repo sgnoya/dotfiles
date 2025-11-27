@@ -83,7 +83,7 @@ plugins=(
 	docker-compose
 	vscode
 	git
-	vi-mode
+	zsh-bat
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	zsh-autocomplete
@@ -122,3 +122,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+bindkey              '^I'         menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete

@@ -32,6 +32,8 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     # os_icon               # os identifier
+    # user
+    # host    
     dir                     # current directory
     vcs                     # git status
     # =========================[ Line #2 ]=========================
@@ -45,6 +47,8 @@
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
+    user
+    host
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
@@ -222,7 +226,7 @@
 
   ##################################[ dir: current directory ]##################################
   # Default current directory color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=31
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=45
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
@@ -308,7 +312,6 @@
   #      extended_glob option enabled.
   #   2. Directory class for the purpose of styling.
   #   3. An empty string.
-  #
   # Triplets are tried in order. The first triplet whose pattern matches $PWD wins.
   #
   # If POWERLEVEL9K_DIR_SHOW_WRITABLE is set to v3, non-writable and non-existent directories
@@ -1633,6 +1636,16 @@
   # Don't show the remaining time to charge/discharge.
   typeset -g POWERLEVEL9K_BATTERY_VERBOSE=false
 
+  #####################################[ host: hostname ]######################################
+  typeset -g POWERLEVEL9K_HOST_FOREGROUND=123
+  typeset -g POWERLEVEL9K_HOST_BACKGROUND=30
+  typeset -g POWERLEVEL9K_HOST_TEMPLATE='%m'
+
+  typeset -g POWERLEVEL9K_HOST_VISUAL_IDENTIFIER_EXPANSION=
+
+  #####################################[ user: username] #######################################
+  typeset -g POWERLEVEL9K_USER_FOREGROUND=120
+  typeset -g POWERLEVEL9K_USER_BACKGROUND=28
   #####################################[ wifi: wifi speed ]#####################################
   # WiFi color.
   typeset -g POWERLEVEL9K_WIFI_FOREGROUND=68
